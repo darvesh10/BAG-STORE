@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/BAG-STORE").then(()=>{
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGO_URI).then(()=>{
     console.log("connected to mongodb");
 }).catch((err)=>{
     console.log("error connecting to mongodb", err);
